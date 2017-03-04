@@ -8,7 +8,7 @@
 		<Label Text="Start Odometer"/>
 		<Entry Text="{Binding Start}" Keyboard="Numeric"/>
 		<Label Text="End Odometer"/>
-		<Entry Text="{Binding End}"/>
+		<Entry Text="{Binding End}" Keyboard="Numeric"/>
 		<Button Text="Save" Clicked="SaveButtonClicked"/>
 	</StackLayout>
 </ContentPage>
