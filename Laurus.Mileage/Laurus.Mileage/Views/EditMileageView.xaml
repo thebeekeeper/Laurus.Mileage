@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laurus.Mileage.Views.EditMileageView">
+	<StackLayout>
+		<Label Text="Date"/>
+		<DatePicker  Date="{Binding Date}"/>
+		<Label Text="Start Odometer"/>
+		<Entry Text="{Binding Start}" Keyboard="Numeric"/>
+		<Label Text="End Odometer"/>
+		<Entry Text="{Binding End}"/>
+		<Button Text="Save" Clicked="SaveButtonClicked"/>
+	</StackLayout>
+</ContentPage>

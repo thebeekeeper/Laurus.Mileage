@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:Laurus.Mileage"
              x:Class="Laurus.Mileage.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+	<StackLayout Margin="5, 0, 5, 0">
+		<!--<Button Text="Add Address" Clicked="AddAddressClicked"/>-->
+		<Button Text="Add New Trip" Clicked="AddButtonClicked"/>
+		<Button Text="Export" Clicked="ExportClicked"/>
+		<Button Text="Clear All" Clicked="ClearAllClicked"/>
+
+		<ListView x:Name="MileageEntries">
+
+		</ListView>
+	</StackLayout>
 
 </ContentPage>
