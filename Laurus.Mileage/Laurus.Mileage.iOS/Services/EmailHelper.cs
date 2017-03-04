@@ -21,8 +21,8 @@ namespace Laurus.Mileage.iOS.Services
          {
             mailController = new MFMailComposeViewController();
             //mailController.SetToRecipients(new string[] { "thebeekeeper@gmail.com" });
-            mailController.SetSubject("Test: expense report");
-            mailController.SetMessageBody("this is a test", false);
+                mailController.SetSubject("Mileage Report");
+            mailController.SetMessageBody("Mileage report exported from MileageApp", false);
 
             var fileHelper = new FileHelper();
             var stream = fileHelper.ReadFileContents(attachment);
@@ -34,9 +34,12 @@ namespace Laurus.Mileage.iOS.Services
                //if (completed != null)
                //   completed(e.Result == MFMailComposeResult.Sent);
                e.Controller.DismissViewController(true, null);
+
+                    // is this the right place to close this? not sure if it copies the stream over before this
+                stream.Close();
             };
 
-            http://stackoverflow.com/questions/24136464/access-viewcontroller-in-dependencyservice-to-present-mfmailcomposeviewcontrolle
+            // http://stackoverflow.com/questions/24136464/access-viewcontroller-in-dependencyservice-to-present-mfmailcomposeviewcontrolle
             //var rootController = ((AppDelegate)(UIApplication.SharedApplication.Delegate)).Window.RootViewController.ChildViewControllers[0].ChildViewControllers[1].ChildViewControllers[0];
             //var navcontroller = rootController as UINavigationController;
             //if (navcontroller != null)

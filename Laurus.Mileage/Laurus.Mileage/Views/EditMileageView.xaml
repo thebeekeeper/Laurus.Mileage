@@ -5,6 +5,10 @@
 	<StackLayout>
 		<Label Text="Date"/>
 		<DatePicker  Date="{Binding Date}"/>
+		<Label Text="Start Location"/>
+		<Picker x:Name="StartLocationPicker"/>
+		<Label Text="End Location"/>
+		<Picker x:Name="EndLocationPicker"/>
 		<Label Text="Start Odometer"/>
 		<Entry Text="{Binding Start}" Keyboard="Numeric"/>
 		<Label Text="End Odometer"/>

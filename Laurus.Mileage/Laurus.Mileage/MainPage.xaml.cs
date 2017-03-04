@@ -35,7 +35,7 @@ namespace Laurus.Mileage
          this.MileageEntries.ItemTemplate.SetBinding(TextCell.TextProperty, "Title");
          this.MileageEntries.ItemTemplate.SetBinding(TextCell.DetailProperty, "Time");
 
-         this.MileageItems = new ObservableCollection<MileageModel>(items.Select(i => new MileageModel() { Id = i.Id, Title = string.Format("Trip {0}", i.Id), Time = i.Time.ToString() }));
+         this.MileageItems = new ObservableCollection<MileageModel>(items.Select(i => new MileageModel() { Id = i.Id, Title = string.Format("Trip {0}", i.Id), Time = i.Time.ToString("d") }));
          this.MileageEntries.ItemsSource = this.MileageItems;
       }
 
@@ -93,10 +93,19 @@ namespace Laurus.Mileage
             int row = 19;
             foreach (var i in items)
             {
+                    var startAdd = App.Database.GetItemsAsync<AddressItem>().Result.FirstOrDefault(x => x.Id == i.StartId);
+                    var startStr = string.Empty;
+                    if (startAdd != null)
+                        startStr = startAdd.Address;
+                    var endAdd = App.Database.GetItemsAsync<AddressItem>().Result.FirstOrDefault(x => x.Id == i.EndId);
+                    var endStr = string.Empty;
+                    if (endAdd != null)
+                        endStr = endAdd.Address;
+                    var addr = string.Format("{0} to {1}", startStr, endStr);
                var cell = string.Format("A{0}", row);
                worksheet[cell].Text = i.Time.ToString("d");
                cell = string.Format("C{0}", row);
-               worksheet[cell].Text = "Mileage";
+               worksheet[cell].Text = addr;
                cell = string.Format("V{0}", row);
                worksheet[cell].Number = i.StartOdometer;
                cell = string.Format("W{0}", row);

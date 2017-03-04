@@ -17,5 +17,8 @@ namespace Laurus.Mileage.Data
       public int StartOdometer { get; set; }
 
       public int EndOdometer { get; set; }
+
+        public int StartId { get; set;}
+        public int EndId { get; set; }
    }
 }
