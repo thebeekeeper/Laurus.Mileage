@@ -176,7 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Laurus.Mileage\Laurus.Mileage.csproj">
-      <Project>{d5bfda9f-5ef2-4578-9f6c-a05b47d5ebd5}</Project>
+      <Project>{D726858E-C339-4C39-82C5-16A194C45F51}</Project>
       <Name>Laurus.Mileage</Name>
     </ProjectReference>
   </ItemGroup>
